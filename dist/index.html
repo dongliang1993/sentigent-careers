@@ -49,7 +49,6 @@
     .brand small { display: block; color: var(--muted); font-size: 12px; line-height: 1.1; font-weight: 500; letter-spacing: .08em; }
     .top-mail { color: var(--blue); text-decoration: none; font-size: 14px; font-weight: 700; }
     .hero { padding: 70px 0 44px; }
-    .eyebrow { margin: 0 0 18px; color: var(--blue); font-weight: 800; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; }
     h1 { margin: 0; max-width: 900px; font-family: Georgia, "Songti SC", serif; font-size: clamp(42px, 7vw, 82px); line-height: 1.03; letter-spacing: -.055em; }
     .hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr); gap: 48px; align-items: end; margin-top: 36px; }
     .intro { margin: 0; max-width: 720px; color: #33404d; font-size: 18px; }
@@ -87,11 +86,6 @@
     .apply p { margin: 0; color: #b9c4cf; font-size: 14px; }
     .mail-btn { flex: none; display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 0; border-radius: 10px; background: var(--blue); color: white; text-decoration: none; font-weight: 750; cursor: pointer; }
     .mail-btn:hover { background: #2b6bff; }
-    .notice { display: none; margin: 18px 0 0; padding: 13px 16px; border: 1px solid #f0cf86; border-radius: 10px; color: #714f08; background: #fff8e8; font-size: 14px; }
-    .notice.show { display: block; }
-    footer { padding: 34px 0 54px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-    footer .shell { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    footer a { color: var(--blue); text-decoration: none; }
     @media (max-width: 800px) {
       .shell { width: min(100% - 24px, 720px); }
       .hero { padding: 46px 0 30px; }
@@ -129,14 +123,11 @@
 
   <main>
     <section class="hero shell">
-      <p class="eyebrow">Sentigent Careers · 2026</p>
       <h1>和我们一起，做走进真实生活的机器人。</h1>
       <div class="hero-grid">
         <p class="intro">深庭纪成立于 2024 年，总部位于苏州，专注消费级具身智能产品。首款产品 Rovar X3 采用双轮足形态，面向家庭与轻户外陪伴场景。我们正在寻找 AI 系统、机器人算法与控制、移动端和产品工程方向的伙伴。</p>
         <ul class="fact-list" aria-label="公司信息">
           <li><span>工作地点</span><b>江苏 · 苏州</b></li>
-          <li><span>岗位数量</span><b>8 个</b></li>
-          <li><span>投递方式</span><b>邮件直投</b></li>
         </ul>
       </div>
     </section>
@@ -344,17 +335,13 @@
               </ul>
             </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="工艺工程师" href="#">邮件投递</a></div></div>
           </details>
-          <p class="notice" id="email-notice" role="status">招聘邮箱还没有配置。请将实际收件邮箱发给站点维护者后再分享此页面。</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="shell"><span>© 2026 苏州深庭纪智能科技有限公司</span><span><a href="https://www.sentigent.cn/about.html" target="_blank" rel="noreferrer">了解深庭纪</a></span></div></footer>
   <script>
-    const params = new URLSearchParams(location.search);
-    const applicationEmail = params.get('email') || '';
-    const notice = document.getElementById('email-notice');
+    const applicationEmail = 'wangjl@sentigent.ai';
 
     function openHashJob() {
       const id = decodeURIComponent(location.hash.slice(1));
@@ -364,17 +351,9 @@
 
     document.querySelectorAll('.mail-btn').forEach((button) => {
       const job = button.dataset.job;
-      if (applicationEmail) {
-        const subject = `应聘｜${job}｜姓名`;
-        const body = `您好，我想应聘“${job}”岗位。简历见附件，谢谢。`;
-        button.href = `mailto:${encodeURIComponent(applicationEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      } else {
-        button.addEventListener('click', (event) => {
-          event.preventDefault();
-          notice.classList.add('show');
-          notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-      }
+      const subject = `应聘｜${job}｜姓名`;
+      const body = `您好，我想应聘“${job}”岗位。简历见附件，谢谢。`;
+      button.href = `mailto:${applicationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 
     window.addEventListener('hashchange', openHashJob);
