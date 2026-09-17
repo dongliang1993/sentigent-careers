@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深庭纪 Sentigent 招聘｜苏州</title>
+  <meta name="description" content="深庭纪 Sentigent 社会招聘岗位，覆盖 AI 部署、机器人算法与控制、移动端、工业设计和工艺工程。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1117'/%3E%3Cpath d='M18 23h28v18H18z' fill='none' stroke='%232f6bff' stroke-width='5'/%3E%3Ccircle cx='25' cy='32' r='3' fill='%23fff'/%3E%3Ccircle cx='39' cy='32' r='3' fill='%23fff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #111820;
+      --muted: #5b6673;
+      --paper: #f5f7fa;
+      --surface: #ffffff;
+      --line: #d9e0e7;
+      --blue: #1459f5;
+      --blue-dark: #0d43c5;
+      --blue-soft: #e9efff;
+      --green: #0d7a55;
+      --radius: 16px;
+      --shadow: 0 18px 48px rgba(21, 36, 56, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(20, 89, 245, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 89, 245, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 32px 32px;
+      font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(217, 224, 231, .9);
+      background: rgba(245, 247, 250, .92);
+      backdrop-filter: blur(14px);
+    }
+    .topbar-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 750; letter-spacing: -.02em; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: var(--ink); color: white; font-family: Georgia, serif; }
+    .brand small { display: block; color: var(--muted); font-size: 12px; line-height: 1.1; font-weight: 500; letter-spacing: .08em; }
+    .top-mail { color: var(--blue); text-decoration: none; font-size: 14px; font-weight: 700; }
+    .hero { padding: 70px 0 44px; }
+    .eyebrow { margin: 0 0 18px; color: var(--blue); font-weight: 800; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 900px; font-family: Georgia, "Songti SC", serif; font-size: clamp(42px, 7vw, 82px); line-height: 1.03; letter-spacing: -.055em; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr); gap: 48px; align-items: end; margin-top: 36px; }
+    .intro { margin: 0; max-width: 720px; color: #33404d; font-size: 18px; }
+    .fact-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+    .fact-list li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .fact-list span:first-child { color: var(--muted); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin: 32px 0 22px; }
+    h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.035em; }
+    .section-note { color: var(--muted); font-size: 14px; }
+    .layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 28px; align-items: start; padding-bottom: 80px; }
+    .job-index { position: sticky; top: 86px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.86); box-shadow: var(--shadow); }
+    .job-index strong { display: block; margin-bottom: 12px; font-size: 13px; letter-spacing: .12em; color: var(--muted); }
+    .job-index a { display: block; padding: 9px 10px; border-radius: 9px; text-decoration: none; font-size: 14px; line-height: 1.35; }
+    .job-index a:hover, .job-index a:focus-visible { color: var(--blue); background: var(--blue-soft); outline: none; }
+    .jobs { display: grid; gap: 14px; }
+    .job { scroll-margin-top: 88px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: clip; box-shadow: 0 7px 22px rgba(21,36,56,.045); }
+    .job[open] { border-color: #b6c7f6; box-shadow: var(--shadow); }
+    .job summary { list-style: none; cursor: pointer; padding: 24px 26px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; }
+    .job summary::-webkit-details-marker { display: none; }
+    .job summary:focus-visible { outline: 3px solid rgba(20,89,245,.35); outline-offset: -3px; }
+    .job-kicker { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; color: var(--muted); font-size: 13px; }
+    .tag { padding: 2px 8px; border-radius: 999px; color: var(--blue-dark); background: var(--blue-soft); font-weight: 700; }
+    h3 { margin: 0; font-size: clamp(20px, 2.4vw, 29px); line-height: 1.35; letter-spacing: -.025em; }
+    .salary { margin-top: 8px; color: var(--green); font-weight: 750; font-size: 14px; }
+    .toggle { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--blue); font-size: 25px; line-height: 1; transition: transform .22s ease, background .22s ease; }
+    .job[open] .toggle { transform: rotate(45deg); color: white; background: var(--blue); border-color: var(--blue); }
+    .job-body { border-top: 1px solid var(--line); padding: 26px; }
+    .job-copy { max-width: 760px; }
+    .job-copy h4 { margin: 28px 0 10px; font-size: 17px; }
+    .job-copy h4:first-child { margin-top: 0; }
+    .job-copy p { margin: 10px 0; }
+    .job-copy ul, .job-copy ol { margin: 8px 0 18px; padding-left: 1.3em; }
+    .job-copy li { margin: 7px 0; }
+    .apply { margin-top: 28px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-radius: 13px; background: var(--ink); color: #eef3f8; }
+    .apply p { margin: 0; color: #b9c4cf; font-size: 14px; }
+    .mail-btn { flex: none; display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 0; border-radius: 10px; background: var(--blue); color: white; text-decoration: none; font-weight: 750; cursor: pointer; }
+    .mail-btn:hover { background: #2b6bff; }
+    .notice { display: none; margin: 18px 0 0; padding: 13px 16px; border: 1px solid #f0cf86; border-radius: 10px; color: #714f08; background: #fff8e8; font-size: 14px; }
+    .notice.show { display: block; }
+    footer { padding: 34px 0 54px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    footer .shell { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { color: var(--blue); text-decoration: none; }
+    @media (max-width: 800px) {
+      .shell { width: min(100% - 24px, 720px); }
+      .hero { padding: 46px 0 30px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .layout { grid-template-columns: 1fr; }
+      .job-index { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+      .job-index strong { grid-column: 1 / -1; }
+      .job summary { padding: 20px; }
+      .job-body { padding: 20px; }
+      .apply { align-items: stretch; flex-direction: column; }
+      .mail-btn { width: 100%; }
+    }
+    @media (max-width: 520px) {
+      .brand small, .top-mail { display: none; }
+      h1 { font-size: 42px; }
+      .intro { font-size: 16px; }
+      .job-index { grid-template-columns: 1fr; }
+      .job-index strong { grid-column: auto; }
+      .job summary { grid-template-columns: minmax(0, 1fr) 34px; gap: 12px; }
+      .toggle { width: 34px; height: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .toggle { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand"><span class="brand-mark">S</span><span>深庭纪 Sentigent<small>CAREERS · SUZHOU</small></span></div>
+      <a class="top-mail" href="#openings">查看 8 个岗位 ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <p class="eyebrow">Sentigent Careers · 2026</p>
+      <h1>和我们一起，做走进真实生活的机器人。</h1>
+      <div class="hero-grid">
+        <p class="intro">深庭纪成立于 2024 年，总部位于苏州，专注消费级具身智能产品。首款产品 Rovar X3 采用双轮足形态，面向家庭与轻户外陪伴场景。我们正在寻找 AI 系统、机器人算法与控制、移动端和产品工程方向的伙伴。</p>
+        <ul class="fact-list" aria-label="公司信息">
+          <li><span>工作地点</span><b>江苏 · 苏州</b></li>
+          <li><span>岗位数量</span><b>8 个</b></li>
+          <li><span>投递方式</span><b>邮件直投</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="shell" id="openings">
+      <div class="section-head"><h2>开放岗位</h2><span class="section-note">点击岗位查看完整 JD</span></div>
+      <div class="layout">
+        <nav class="job-index" aria-label="岗位目录">
+          <strong>岗位目录 · 08</strong>
+          <a href="#ai-systems">高级 AI 系统部署与加速</a>
+          <a href="#ai-toolchain">AI 部署工具链</a>
+          <a href="#rl">机器人强化算法</a>
+          <a href="#control">机器人控制系统开发</a>
+          <a href="#compression">模型剪枝量化</a>
+          <a href="#mobile">移动端开发</a>
+          <a href="#industrial-design">工业设计</a>
+          <a href="#process">工艺工程</a>
+        </nav>
+
+        <div class="jobs">
+          <details class="job" id="ai-systems">
+            <summary><div><div class="job-kicker"><span class="tag">AI 系统</span><span>平台软件组 · 苏州</span></div><h3>高级 AI 系统部署与加速工程师（机器人方向）</h3><div class="salary">50–70K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ul>
+                <li>负责机器人感知、LLM、多模态语音等 AI 模型的工程化部署、加速优化与系统集成。</li>
+                <li>设计并维护 AI 推理与感知模块软件框架，提升系统可扩展性和稳定性。</li>
+                <li>负责模型在 NVIDIA GPU 平台上的部署与调优，持续优化推理延迟、显存占用和资源利用率。</li>
+                <li>参与模型部署、TensorRT 插件开发、多模块联调、性能测试和持续迭代。</li>
+                <li>优化 Transformer 关键算子，包括 Attention、LayerNorm、RMSNorm、MLP 等。</li>
+                <li>建设多传感器数据录制、离线回灌、结果可视化和问题分析工具链。</li>
+                <li>开展 GPU Profiling 和系统级分析，支持机器人整机联调与真实场景落地。</li>
+              </ul>
+              <h4>任职要求</h4>
+              <ul>
+                <li>本科及以上学历，电子、通信、计算机、自动化或相关专业；3 年以上 AI 模型部署或推理加速经验。</li>
+                <li>扎实的 C++、CUDA、Python 能力，熟悉 Linux、多线程、并发编程和高性能架构。</li>
+                <li>熟练使用 Nsight Systems、Nsight Compute、nvprof 等分析工具。</li>
+                <li>熟悉 Transformer、CNN、RNN 等模型及 TensorRT 部署、插件和 Kernel 优化。</li>
+                <li>理解 CUDA 显存管理、流并发和异步执行机制，能定位算子级性能瓶颈。</li>
+                <li>了解模型从训练、转换到部署和优化的完整链路；有 FP16 / INT8 量化、剪枝、蒸馏经验优先。</li>
+                <li>有机器人、自动驾驶或非 NVIDIA AI 芯片部署经验优先。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="高级 AI 系统部署与加速工程师（机器人方向）" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="ai-toolchain">
+            <summary><div><div class="job-kicker"><span class="tag">AI 工具链</span><span>平台软件组 · 苏州</span></div><h3>AI 部署工具链工程师</h3><div class="salary">40–50K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ul>
+                <li>设计多模态数据录制工具，采集并同步传感器数据、模型输入输出和中间结果。</li>
+                <li>建设离线数据回灌、问题复现和线上问题转离线 Case 的自动化链路。</li>
+                <li>开发模型中间 Tensor、特征图和时序结果可视化，以及跨版本、精度和硬件平台的对比工具。</li>
+                <li>维护 ONNX → TensorRT → Runtime 的转换、构建、插件调试、精度验证和性能基准工具。</li>
+                <li>搭建 GPU 性能分析体系，覆盖链路延迟、显存、Kernel 热点和性能回退。</li>
+                <li>建设自动化评测、回归测试与日志分析工具，推动部署流程标准化。</li>
+              </ul>
+              <h4>任职要求</h4>
+              <ul>
+                <li>本科及以上学历，计算机、电子、自动化或相关专业；2 年以上 AI 推理部署或 GPU 工具开发经验。</li>
+                <li>精通 C++、CUDA、Python，熟悉 Linux、多线程和并发编程。</li>
+                <li>熟练使用 Nsight Systems、Nsight Compute、nvprof 等 Profiling 工具。</li>
+                <li>理解 GPU 计算、显存管理、异步流和数据拷贝机制。</li>
+                <li>有数据录制回放、仿真调试、推理可视化或 Benchmark 系统经验优先。</li>
+                <li>熟悉 PyTorch、ONNX Runtime、Triton、模型量化或非 NVIDIA 平台者优先。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="AI 部署工具链工程师" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="rl">
+            <summary><div><div class="job-kicker"><span class="tag">机器人算法</span><span>运控强化组 · 苏州</span></div><h3>机器人强化算法工程师</h3><div class="salary">50–80K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ol>
+                <li>主导机器人运动控制核心算法设计与迭代，覆盖平衡控制、轨迹优化和动力学建模。</li>
+                <li>完成 PID、滑模控制、MPC、LQR、卡尔曼滤波等算法的工程化实现。</li>
+                <li>基于强化学习和 Mimic 框架研发运动技能，提升动态环境中的泛化和自适应能力。</li>
+                <li>搭建仿真与实机测试体系，保障算法实时性、鲁棒性和安全性。</li>
+                <li>跟进世界模型、无图导航、多模态运动融合等方向并推动落地。</li>
+              </ol>
+              <h4>任职要求</h4>
+              <ul>
+                <li>自动化、控制、机器人、计算机或机械电子相关专业，本科及以上学历。</li>
+                <li>拥有可验证的机器人运动控制代表作品，双轮足方向优先。</li>
+                <li>精通机器人动力学、运动学及 PID、MPC、滑模、自适应控制等方法。</li>
+                <li>理解 DQN、PPO、SAC、世界模型，具备 Isaac Gym、Mimic、MuJoCo、PyBullet 或同类项目经验。</li>
+                <li>熟练使用 C++ / Python，具备实机调试和传感器融合经验。</li>
+                <li>博士或具备 3 年以上相关经验优先；优秀硕士可凭高质量作品放宽。</li>
+                <li>有 ICRA、IROS、NeurIPS 等论文、专利或量产机器人项目经验优先。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历和代表作品。</p></div><a class="mail-btn" data-job="机器人强化算法工程师" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="control">
+            <summary><div><div class="job-kicker"><span class="tag">机器人控制</span><span>平台软件组 · 苏州</span></div><h3>机器人控制系统开发工程师（运控方向）</h3><div class="salary">30–50K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ul>
+                <li>设计并演进机器人控制软件架构，梳理模块边界、接口、数据流和控制模式切换机制。</li>
+                <li>用现代 C++ 开发高性能、模块化控制框架，集成强化学习策略和 PID、LQR、MPC 等控制器。</li>
+                <li>完成强化学习策略的模型接入、推理部署、运行时调度、资源优化和实机验证。</li>
+                <li>设计多板通信链路和跨板级运动控制 SDK，为上层算法提供统一稳定的接入层。</li>
+                <li>与嵌入式、算法和系统团队完成传感器、执行器、状态估计与闭环控制集成。</li>
+                <li>负责 Linux / ARM 平台上的构建、部署、测试、性能调优和回归验证。</li>
+              </ul>
+              <h4>任职要求</h4>
+              <ul>
+                <li>计算机、软件、自动化、控制或机器人相关专业，本科及以上学历。</li>
+                <li>精通 C/C++ 和现代 C++，熟悉多线程、内存管理、模块化开发与架构设计。</li>
+                <li>有大型 C++ 项目或机器人系统模块设计经验，熟悉跨平台构建与调试。</li>
+                <li>有机器人控制框架、强化学习部署、Isaac Lab / Gym、MuJoCo、Gazebo、ROS2 或 DDS 经验优先。</li>
+                <li>了解 FreeRTOS、CAN、UART、SPI、STM32、电机控制、FOC 或实机调参者优先。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="机器人控制系统开发工程师（运控方向）" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="compression">
+            <summary><div><div class="job-kicker"><span class="tag">模型压缩</span><span>感知组 · 苏州</span></div><h3>具身智能模型剪枝量化工程师</h3><div class="salary">40–60K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ul>
+                <li>对感知、运控和决策模型进行 INT8、FP16、W4A8 等多精度量化。</li>
+                <li>设计结构化或非结构化剪枝、知识蒸馏及混合精度策略。</li>
+                <li>在 NVIDIA Jetson、TensorRT、RK NPU、RKNN 等平台完成模型转换与推理优化。</li>
+                <li>开展算子融合、内存布局和推理图优化，建立延迟、吞吐与功耗基线。</li>
+                <li>在训练阶段引入 QAT 和稀疏化约束，评估不同压缩比的精度收益。</li>
+                <li>维护 ONNX、TensorRT、RKNN、OpenVINO 等内部工具链与自动化 Benchmark。</li>
+              </ul>
+              <h4>任职要求</h4>
+              <ul>
+                <li>计算机、自动化、电子工程等相关专业，本科及以上学历；3 年以上模型压缩、量化或部署经验。</li>
+                <li>熟悉 CNN、Transformer、RL Policy 网络和 PTQ / QAT 流程。</li>
+                <li>熟悉 TensorRT、RKNN、NCNN、MNN、OpenVINO 中至少一种端侧框架。</li>
+                <li>具备通道剪枝、层剪枝或非结构化稀疏经验，了解 SparseGPT 等方法优先。</li>
+                <li>能修改 PyTorch 模型、处理 ONNX 自定义算子和动态 Shape，并开展算子级 Profiling。</li>
+                <li>有具身智能、自动驾驶、RL Policy 或 LLM 量化经验优先。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="具身智能模型剪枝量化工程师" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="mobile">
+            <summary><div><div class="job-kicker"><span class="tag">移动端</span><span>平台软件组 · 苏州</span></div><h3>移动端开发工程师</h3><div class="salary">15–25K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ol>
+                <li>负责核心移动端 App 的架构设计、功能开发与迭代，主要使用 Flutter 跨平台开发。</li>
+                <li>开发 Flutter 与原生交互桥接层，封装、维护和优化双端公共组件与插件。</li>
+                <li>优化启动速度、内存管理和 UI 流畅度。</li>
+                <li>打通 App 与机器人的连接，推动智能应用在真实场景中稳定落地。</li>
+              </ol>
+              <h4>任职要求</h4>
+              <ul>
+                <li>计算机相关专业，本科及以上学历；3 年以上移动端开发经验。</li>
+                <li>精通 Dart / Flutter、Kotlin / Java，熟悉 Android SDK、NDK，具备 C++ 能力。</li>
+                <li>熟悉 WebSocket、MQTT、蓝牙、Wi-Fi 等通信技术。</li>
+                <li>代码习惯良好，有责任心、自驱力和团队协作能力。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="移动端开发工程师" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="industrial-design">
+            <summary><div><div class="job-kicker"><span class="tag">工业设计</span><span>设计组 · 苏州</span></div><h3>工业设计师</h3><div class="salary">15–30K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ul>
+                <li>负责机器人整机、周边、玩法及包装设计，建立有辨识度的产品形态。</li>
+                <li>推进 CMF 配色、3D 建模、渲染和原型制作，验证设计可行性。</li>
+                <li>与工程师及供应商协作，跟进从原型到量产的全过程，解决设计相关生产问题。</li>
+                <li>研究材料、制造工艺、竞品和行业趋势，推动产品设计持续升级。</li>
+                <li>熟练使用多种 AI 工具辅助设计并形成可落地结果。</li>
+              </ul>
+              <h4>任职要求</h4>
+              <ul>
+                <li>工业设计或相关专业，本科及以上学历。</li>
+                <li>熟练使用 SolidWorks、Rhino、KeyShot、Photoshop、CorelDRAW、Illustrator 等工具，手绘和效果图能力扎实。</li>
+                <li>理解用户体验、CMF、产品结构、模具和生产工艺。</li>
+                <li>完整参与过量产产品设计，并在项目中承担主要设计工作。</li>
+                <li>有机器人、智能硬件、家电、交通工具或 3C 经验，以及红点、iF 等奖项者优先。</li>
+                <li>投递时请附原创作品集。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历和作品集。</p></div><a class="mail-btn" data-job="工业设计师" href="#">邮件投递</a></div></div>
+          </details>
+
+          <details class="job" id="process">
+            <summary><div><div class="job-kicker"><span class="tag">产品工程</span><span>硬件组 · 苏州</span></div><h3>工艺工程师</h3><div class="salary">20–30K / 月</div></div><span class="toggle" aria-hidden="true">＋</span></summary>
+            <div class="job-body"><div class="job-copy">
+              <h4>岗位职责</h4>
+              <ul>
+                <li>负责机器人整机及结构件、电子件、线束、传感器和执行器模组的工艺策划与导入。</li>
+                <li>完成 EVT / DVT / PVT 阶段装配工艺设计，输出 SOP、SIP、作业指导书和检验要求。</li>
+                <li>提出工装、夹具和治具需求并完成方案评估、导入验证与优化。</li>
+                <li>参与 NPI，推动装配、工时、良率和一致性问题闭环。</li>
+                <li>与研发、质量、供应链和生产协作，推进 DFM、DFA、DFT 优化。</li>
+                <li>参与试制车间和中试线规划，开展 ECN / ECR 工艺评估及 PFMEA、控制计划等质量前置工作。</li>
+              </ul>
+              <h4>任职要求</h4>
+              <ul>
+                <li>机械工程、自动化、电子制造等相关专业，本科及以上学历。</li>
+                <li>5 年以上 PE、ME、NPI 或工艺工程经验；智能硬件、机器人、消费电子、汽车电子经验优先。</li>
+                <li>熟悉 EVT / DVT / PVT / MP 流程，能独立输出 SOP、SIP、流程图、工艺 BOM 和工装需求。</li>
+                <li>熟悉扭矩控制、线束、胶黏剂、密封防护、连接器、外观保护和防呆防错等工艺。</li>
+                <li>能读懂机械图、装配图和 BOM，具备现场分析、动手改善和跨部门推动能力。</li>
+                <li>有试制线建设、工装夹具导入、PFMEA、8D、5Why 或供应商现场经验优先。</li>
+              </ul>
+            </div><div class="apply"><div><b>对这个岗位感兴趣？</b><p>邮件主题将自动带上岗位名称，请附 PDF 简历。</p></div><a class="mail-btn" data-job="工艺工程师" href="#">邮件投递</a></div></div>
+          </details>
+          <p class="notice" id="email-notice" role="status">招聘邮箱还没有配置。请将实际收件邮箱发给站点维护者后再分享此页面。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><span>© 2026 苏州深庭纪智能科技有限公司</span><span><a href="https://www.sentigent.cn/about.html" target="_blank" rel="noreferrer">了解深庭纪</a></span></div></footer>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const applicationEmail = params.get('email') || '';
+    const notice = document.getElementById('email-notice');
+
+    function openHashJob() {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const target = id && document.getElementById(id);
+      if (target && target.tagName === 'DETAILS') target.open = true;
+    }
+
+    document.querySelectorAll('.mail-btn').forEach((button) => {
+      const job = button.dataset.job;
+      if (applicationEmail) {
+        const subject = `应聘｜${job}｜姓名`;
+        const body = `您好，我想应聘“${job}”岗位。简历见附件，谢谢。`;
+        button.href = `mailto:${encodeURIComponent(applicationEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      } else {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          notice.classList.add('show');
+          notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+    });
+
+    window.addEventListener('hashchange', openHashJob);
+    openHashJob();
+  </script>
+</body>
+</html>
